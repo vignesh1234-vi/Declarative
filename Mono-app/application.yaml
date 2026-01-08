@@ -7,9 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/vignesh1234-vi/K8-manifest-ArgoCd-.git
+    repoURL: https://github.com/vignesh1234-vi/Declarative.git
     targetRevision: main
-    path: manifests/zomato-clone
+    path: manifest/zomato-clone
 
   destination:
     server: https://kubernetes.default.svc

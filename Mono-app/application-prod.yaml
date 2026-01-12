@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zomato-prod
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/vignesh1234-vi/Declarative.git
+    targetRevision: main
+    path: manifest/zomato-clone
+
+  destination:
+    server: https://E988B975E9E9667D7561B86066E6AF9A.gr7.eu-north-1.eks.amazonaws.com
+    namespace: zomatoclone
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
